@@ -1,0 +1,104 @@
+﻿@{
+    Layout = null;    
+}
+<div class="row" style="margin-left:0px;">
+<div class="col-md-12">              
+    <div class="box">
+    <div class="box-header">       
+    </div><!-- /.box-header -->
+    <div class="box-body pad">
+        <div class="form-group">  
+            <div> 
+                <select name="repeatSelect" id="repeatSelect" ng-model="repeatSelect">
+                  <option ng-repeat="route in Routes" value="{{route.Code}}">{{route.Name}}</option>
+                </select>
+            </div>  
+            <br />
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label">Loại hình hoạt động</label>
+                <div class="col-sm-9">
+                <input class="form-control" value="{{ChosenRoute.ServiceKind}}" ng-model="ChosenRoute.ServiceKind" placeholder="xe trợ giá hay không?">
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label">Cự Ly</label>
+                <div class="col-sm-9">
+                <input class="form-control" value="{{ChosenRoute.Distance}}" ng-model="ChosenRoute.Distance" placeholder="km">
+                </div>
+            </div>
+            <br />
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label">Số chuyến</label>
+                <div class="col-sm-9">
+                <input class="form-control" value="{{ChosenRoute.TurnPerDay}}" ng-model="ChosenRoute.TurnPerDay" placeholder="chuyến/ngày">
+                </div>
+            </div>
+            <br />
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label">Thời gian chuyến</label>
+                <div class="col-sm-9">
+                <input value="{{ChosenRoute.Duration}}" ng-model="ChosenRoute.Duration" class="form-control" placeholder="phút/chuyến">
+                </div>
+            </div>
+            <br />
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label">Giãn cách</label>
+                <div class="col-sm-9">
+                <input value="{{ChosenRoute.NextBusTime}}" ng-model="ChosenRoute.NextBusTime" class="form-control" placeholder="phút/chuyến">
+                </div>
+            </div>
+            <br />
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label" >Thời gian hoạt động</label>
+                <div class="col-sm-9">
+                    <form >
+                    <textarea class="textarea" ng-model="ChosenRoute.WorkTime" placeholder="Place some text here" style="width: 100%; height: 150px; font-size: 14px; line-height: 14px; border: 1px solid #dddddd; padding: 10px; ">{{ChosenRoute.WorkTime}}</textarea>
+                    </form>
+                </div>
+            </div>
+            <br />
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label">Loại xe</label>
+                <div class="col-sm-9">
+                <input class="form-control" value="{{ChosenRoute.BusKind}}" ng-model="ChosenRoute.BusKind" placeholder="xe loại gì">
+                </div>
+            </div>
+            <br />
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label">Đơn vị đảm nhận:</label>
+                <div class="col-sm-9">
+                <input class="form-control" value="{{ChosenRoute.Owner}}" ng-model="ChosenRoute.Owner" placeholder="xe loại gì">
+                </div>
+            </div>
+            <br />  
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label">Giá vé:</label>
+                <div class="col-sm-9">
+                <input class="form-control" value="{{ChosenRoute.TicketCost}}" ng-model="ChosenRoute.TicketCost" placeholder="xe loại gì">
+                </div>
+            </div>
+            <br />
+            <div>
+                <label for="inputEmail3" class="col-sm-3 control-label">Ghi chú:</label>
+                <div class="col-sm-9">
+                <input class="form-control" value="{{ChosenRoute.Note}}" ng-model="ChosenRoute.Note" placeholder="xe loại gì">
+                </div>
+            </div>
+            <div>
+            <div>
+                <button type="submit" class="btn btn-primary" ng-click="submitRoute()" style="float:right;margin-right:20px;margin-top:15px;">Submit</button>
+            </div>            
+        </div>
+    </div>
+    </div>
+</div><!-- /.col-->
+</div><!-- ./row -->
+</div>
+<script src="~/Scripts/Lib/bootstrap3-wysihtml5.all.js"></script>
+<script type="text/javascript">
+$(function () {
+    $("#editArea").wysihtml5();
+});
+</script>
+@*$('iframe').contents().find('.wysihtml5-editor').html();*@

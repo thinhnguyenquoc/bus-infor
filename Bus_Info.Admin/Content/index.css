@@ -1,0 +1,191 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-color: #E6E6E6;
+}
+
+/* highlight results */
+.ui-autocomplete span.hl_results {
+    background-color: #ffff66;
+}
+
+/* loading - the AJAX indicator */
+.ui-autocomplete-loading {
+    background: white url('../images/loader.GIF') right center no-repeat;
+}
+
+.ui-autocomplete li {
+    font-size: 16px;
+}
+
+/* scroll results */
+.ui-autocomplete { /* Autocomplete Jquery*/
+	max-height: 250px;
+	max-width: 340px;
+	height: auto;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+	/* add padding to account for vertical scrollbar */
+	padding-right: 0px;
+}
+
+#ajax-loader-indicator {
+    position: absolute;
+    background-color: #4D4D4D;
+    opacity:0.85;
+    filter:alpha(opacity=85); /* For IE8 and earlier */
+    height: 100%;
+    width: 100%;
+    z-index:2;
+}
+
+#ajax-loader-indicator #loading {
+    position:absolute;
+  	top:50%;
+  	left:50%;
+  	margin-top:-50px; /* this is half the height of your div*/  
+  	margin-left:-100px; /*this is half of width of your div*/
+  	background-color: #000000;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#ajax-loader-indicator #loading #p-loading {
+	color: #A2A2A2;
+	font-style: inherit;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#formshortestpath {
+	position: absolute;
+	left: 40px;
+    top: 10px;
+	width: 350px;
+	background-color:#FFFFFF;
+	box-shadow: 10px 10px 5px #888888;
+	z-index: 1;
+}
+
+#titletimduong, #titleOption, #titleShowTextPath_1, #titleShowTextPath_2, #titleShowTextPath_3 {
+	background-color: #4D90FE;
+	text-align: center;
+	color: #FFFFFF;
+	height: auto;
+	font-size:large;
+	cursor:pointer;
+}
+
+.info{
+	padding: 5px;
+}
+
+#showTextPath_1, #showTextPath_2, #showTextPath_3 {
+	position: absolute;
+	left: 40px;
+	width: 350px;
+	background-color:#FFFFFF;
+	box-shadow: 10px 10px 5px #888888;
+	z-index: 1;
+}
+
+#map {
+	position: absolute;
+	width:100%;
+    height:100%;
+}
+
+#option{
+	position: absolute;
+	width: 30%;
+	left: 35%;
+    top: 10%;
+    background-color:#FFFFFF;
+    box-shadow: 10px 10px 5px #888888;
+	z-index: 3;
+}
+
+#stationOption{
+	padding: 15px;
+	max-height: 300px;
+	padding: 0px 0px;
+}
+
+#opacityMap {
+	position: absolute;
+    background-color: #70706B;
+    opacity:0.6;
+    filter:alpha(opacity=60); /* For IE8 and earlier */
+    height: 100%;
+    width: 100%;
+    z-index:2;
+}
+
+#submitbutton {
+	width: 100%;
+	margin-top: 3px;
+	background-color: #5cb85c;
+	color: #FFFFFF;
+	font-size:large;
+}
+
+#cancelOption {
+	float: left;
+	width: 33%;
+	text-align: center;
+	cursor: pointer;
+	background-color: #009900;
+	color: #FFFFFF;
+	padding: 4px 0px;
+}
+
+#depOption {
+	float: left;
+	width: 33%;
+	text-align: center;
+	cursor: pointer;
+	background-color: #0033CC;
+	color: #FFFFFF;
+	padding: 4px 0px;
+}
+
+#arOption {
+	float: left;
+	width: 34%;
+	text-align: center;
+	cursor: pointer;
+	background-color: #FF0000;
+	color: #FFFFFF;
+	padding: 4px 0px;
+}
+
+#noticeClickSearch{
+	position: absolute;
+	max-height: 200px;
+	width: 200px;
+	left: 40%;
+    top: 30%;
+    background-color:#FFFFFF;
+    box-shadow: 10px 10px 5px #888888;
+	z-index: 3;
+}
+
+#titleNoticeClickSearch {
+	background-color: #4D90FE;
+	text-align: center;
+	color: #FFFFFF;
+	height: auto;
+	font-size:large;
+}
+
+#closeNoticeClick {
+	cursor: pointer;
+}
+
+#contentNoticeClick {
+	text-align: center;
+	padding: 10px 10px;
+}

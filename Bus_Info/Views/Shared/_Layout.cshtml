@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="~/Content/Images/Bus-48.ico">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/leaflet.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/_all-skins.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/AdminLTE.css" rel="stylesheet" />
+    <link href="~/Content/angular-block-ui.css" rel="stylesheet" />
+    
+    <script src="~/Scripts/Lib/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/Lib/angular.min.js"></script>
+    <script src="~/Scripts/Lib/bootstrap.min.js"></script>
+    <script src="~/Scripts/Lib/app.js"></script>
+    <script src="~/Scripts/Lib/modernizr-2.6.2.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-52891364-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TQHG3B"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TQHG3B');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>   
+    <div class="sidebar-mini skin-red-light">
+        @RenderBody()
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Phiên bản</b> 1.0
+            </div>
+            <strong>Copyright &copy; 2015-2016 <a href="https://www.facebook.com/thongtinxebuyt">Bus group</a>.</strong> All rights reserved.
+        </footer>
+    </div>  
+</body>
+</html>

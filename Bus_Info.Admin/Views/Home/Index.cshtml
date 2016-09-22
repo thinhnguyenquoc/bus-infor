@@ -1,0 +1,35 @@
+﻿@using Bus_Info.ViewModels
+@model ViewModelUser
+@{
+    ViewBag.Title = "Index";
+}
+<div class="hold-transition login-page">
+    <div class="login-box">
+      <div class="login-logo" style="padding-top:20px;">
+        <a href="#">Thông Tin Xe Buýt</a>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        @using(Html.BeginForm("Login","Home",FormMethod.Post, new {id="form1"})){
+          <div class="form-group has-feedback">
+              @Html.EditorFor(x => x.Email, new {htmlAttributes = new {type="email", @class="form-control", placeholder="Email" }})
+          </div>
+          <div class="form-group has-feedback">
+              @Html.EditorFor(x => x.Pass, new {htmlAttributes = new {type="password", @class="form-control", placeholder="Password"}})
+          </div>
+          <div class="row">            
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            </div><!-- /.col -->
+          </div>
+        }
+      
+@*        <a href="#">I forgot my password</a><br>
+        <a href="register.html" class="text-center">Register a new membership</a>*@
+
+      </div><!-- /.login-box-body -->
+        <br />
+    </div><!-- /.login-box -->
+</div>
+ 
+

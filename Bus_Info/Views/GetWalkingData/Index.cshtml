@@ -1,0 +1,116 @@
+﻿@using Bus_Info.Web.Controllers
+@*@model List<List<Bus_Info.ViewModels.ViewModelStation>>*@
+@model List<Bus_Info.ViewModels.ViewModelWalkingConnection>
+@{
+    Layout = null;
+    var baseUrl = new Uri(Request.Url, Url.Content("~")).AbsoluteUri;
+}
+
+<!DOCTYPE html>
+<script>
+    var initData = @Html.Raw(Model.ToJson())
+    var baseUrl = '@baseUrl';
+</script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+    </div>
+</body>
+</html>
+<script src="~/Scripts/Lib/jquery-1.10.2.js"></script>
+<script src="~/Scripts/Lib/knockout-2.2.0.js"></script>
+<script src="~/Scripts/Lib/Knockout.mapping-latest.js"></script>
+<script src="~/Scripts/Lib/polyline.js"></script>
+<script type="text/javascript">
+    // convert array poliLine to string polyline
+    /*var connectionModel = function () {
+        var self = this;
+        var mapping = {
+            create: function (options) {
+                var array = [];
+                if (options.data.PolyLine != '') {
+                    //var couple = options.data.PolyLine.split(' ');
+                    //for (var i = 0 ; i < couple.length; i++) {
+                    //    var temp = [couple[i].split(',')[1], couple[i].split(',')[0]];
+                    //    array.push(temp);
+                    //}
+                    var k = JSON.parse(options.data.PolyLine);
+                    //var convertLatLng = [];
+                    //for(var i = 0 ; i < k.length; i++) {
+                    //    var temp = [];
+                    //    //lat
+                    //    temp.push(k[i][1]);
+                    //    //lng
+                    //    temp.push(k[i][0]);
+                    //    convertLatLng.push(temp);
+                    //}
+
+                    //options.data.PolyLine = polyline.encode(convertLatLng);
+                    options.data.PolyLine = polyline.encode(k);
+                }
+                return options.data;
+            }
+        }
+        self.model = ko.mapping.fromJS(initData, mapping);
+
+        self.submit = function () {
+            var data = ko.mapping.toJS(self.model);
+
+            for (var index = 0; index < 11; index++) {
+                var postData = [];
+                if (data.length < (index + 1) * 1000) {
+                    for (var i = (index) * 1000; i < data.length ; i++) {
+                        postData.push(data[i]);
+                    }
+                }
+                else {
+                    for (var i = (index) * 1000; i < (index + 1) * 1000 ; i++) {
+                        postData.push(data[i]);
+                    }
+                }
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    contentType: 'application/json',
+                    async: false,
+                    url: baseUrl + "GetWalkingData/Submit",
+                    data: JSON.stringify({ data: postData, totalRow: data.length }),
+                    //data: JSON.stringify(bigReferral),
+                    success: function (data) {
+
+                    }
+                });
+            }
+        }
+    }
+
+    var model = new connectionModel();
+    model.submit();
+    ko.applyBindings(model);
+    */
+
+    // get data from mapbox api
+    //var listWalking = [];
+    //i=0;
+    //var intervalID = window.setInterval(myCallback, 3500);
+
+    //function myCallback() {
+    //    // Your code here
+    //    var url = "https://api.mapbox.com/v4/directions/mapbox.walking/"+initData[i][0].Lng+","+initData[i][0].Lat+";"+initData[i][1].Lng+","+initData[i][1].Lat+".json?access_token=pk.eyJ1IjoidGhpbms5MCIsImEiOiJjaW0wZDVlY2YwMGpqcnJrczhha2JiYjh1In0.DtZmoBDP7ASlIX6PB1d3MA";
+    //    $.get(url, function(data){
+    //        listWalking.push(data);
+    //        $.post("http://localhost:56720/GetWalkingData/WriteData", {data:JSON.stringify(data)}, function(result){
+
+    //        },'txt');
+    //    });
+    //    i++;
+    //    if(i > 10861)
+    //        clearTimeout(intervalID);
+        
+    //}
+  
+</script>

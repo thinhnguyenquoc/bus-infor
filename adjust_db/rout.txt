@@ -1,0 +1,137 @@
+	1  * 01  *  Bến Thành- BX Chợ Lớn 
+	2  * 02  *  Bến Thành- BX Miền Tây 
+	3  * 03  *  Bến Thành- Thạnh Lộc 
+	4  * 04  *  Bến Thành- Cộng Hòa- An Sương 
+	5  * 05  *  Bến xe Chợ Lớn - Biên Hòa 
+	6  * 06  *  Bến xe Chợ Lớn- Đại học Nông Lâm 
+	7  * 07  *  Bến xe Chợ Lớn- Gò vấp 
+	8  * 08  *  Bến xe Quận 8- Đại học Quốc Gia 
+	9  * 09  *  Chợ Lớn - Bình Chánh - Hưng Long 
+	10  * 10  *  Đại học Quốc Gia- Bến xe Miền Tây 
+	11  * 100  *  Bến xe Củ Chi - Cầu Tân Thái 
+	12  * 101  *  Bến xe Chợ Lớn - Bến Phú Định 
+	13  * 102  *  Bến Thành - Nguyễn Văn Linh - Bến xe Miền Tây 
+	14  * 103  *  Bến xe Chợ Lớn - Bến xe Ngã 4 Ga 
+	15  * 104  *  Bến xe An Sương - Đại học Nông Lâm 
+	16  * 107  *  Bến xe Củ Chi - Bố Heo 
+	17  * 11  *  Bến Thành- Đầm Sen 
+	18  * 110  *  Phú Xuân - Hiệp Phước 
+	19  * 12  *  Bến Thành - Thác Giang Điền 
+	20  * 122  *  Bến xe An Sương - Tân Quy 
+	21  * 123  *  Phú Mỹ Hưng (khu H) - Quận 1 
+	22  * 124  *  Phú Mỹ Hưng (khu S) - Quận 1 
+	23  * 126  *  Bến xe Củ Chi - Bình Mỹ 
+	24  * 13  *  Bến Thành- Bến xe Củ Chi 
+	25  * 139  *  Bến xe Miền Tây - Phú Xuân 
+	26  * 14  *  Miền Đông- 3 tháng 2- Miền Tây 
+	27  * 140  *  Công viên 23/9 - Phạm Thế Hiển - Ba Tơ 
+	28  * 141  *  KDL BCR - Long Trường - KCX Linh Trung 2 
+	29  * 144  *  Bến xe Miền Tây - Chợ Lớn - CV Đầm Sen - CX Nhiêu Lộc 
+	30  * 145  *  Bến xe Chợ Lớn - Chợ Hiệp Thành 
+	31  * 146  *  Bến xe Miền Đông - Chợ Hiệp Thành 
+	32  * 148  *  Bến xe Miền Tây - Gò Vấp 
+	33  * 149  *  Công viên 23/9 - Khu dân cư Bình Hưng Hòa 
+	34  * 15  *  Bến Phú Định- Đầm Sen 
+	35  * 150  *  Bến xe Chợ Lớn - Ngã 3 Tân Vạn 
+	36  * 151  *  Bến xe Miền Tây - Bến xe An Sương 
+	37  * 152  *  Khu dân cư Trung Sơn - Bến Thành - Sân bay Tân Sơn Nhất 
+	38  * 16  *  Bến xe Chợ Lớn - Bến xe Tân Phú 
+	39  * 17  *  Bến Xe Chợ Lớn - ĐH Sài Gòn - KCX Tân Thuận 
+	40  * 18  *  Bến Thành - Chợ Hiệp Thành 
+	41  * 19  *  Bến Thành - Khu Chế Xuất Linh Trung - Đại Học Quốc Gia 
+	42  * 20  *  Bến Thành - Nhà Bè 
+	43  * 22  *  Bến Xe Quận 8 - KCN Lê Minh Xuân 
+	44  * 23  *  Bến xe Chợ Lớn - Ngã 3 Giồng - Cầu Lớn 
+	45  * 24  *  Bến Xe Miền Đông - Hóc Môn 
+	46  * 25  *  Bến Xe Quận 8 - Khu Dân Cư Vĩnh Lộc A 
+	47  * 26  *  Bến Xe Miền Đông - Bến Xe An Sương 
+	48  * 27  *  Bến Thành - Âu Cơ - An Sương 
+	49  * 28  *  Bến Thành - Chợ Xuân Thới Thượng 
+	50  * 29  *  Bến Phà Cát Lái - Chợ Nông Sản Thủ Đức 
+	51  * 30  *  Chợ Tân Hương - Đại học Quốc tế 
+	52  * 31  *  Khu dân cư Tân Quy - Bến Thành - Khu dân cư Bình Lợi 
+	53  * 32  *  Bến Xe Miền Tây - Bến Xe Ngã Tư Ga 
+	54  * 33  *  Bến Xe An Sương - Suối Tiên - Đại học Quốc Gia 
+	55  * 34  *  Bến Thành - Đại Học Công Nghệ Sài Gòn 
+	56  * 35  *  Tuyến xe buýt Quận 1 - Quận 2 
+	57  * 36  *  Bến Thành - Thới An 
+	58  * 37  *  Cảng Quận 4 - Nhơn Đức 
+	59  * 38  *  KDC Tân Quy - Đầm Sen 
+	60  * 39  *  Bến Thành - Võ Văn Kiệt - Bến Xe Miền Tây 
+	61  * 40  *  Bến xe Miền Đông- Bến xe Ngã Tư Ga 
+	62  * 41  *  Bến xe Miền Tây- Ngã tư Bốn xã- Bến xe An Sương 
+	63  * 42  *  Chợ Cầu Muối-Chợ nông sản Thủ Đức 
+	64  * 43  *  Bến xe Miền Đông- Phà Cát Lái 
+	65  * 44  *  Cảng Quận 4- Bình Quới 
+	66  * 45  *  Bến xe Quận 8- Bến Thành- Bến xe Miền Đông 
+	67  * 46  *  Cảng Quận 4- Bến Thành- Bến Mễ Cốc 
+	68  * 47  *  Bến xe Chợ Lớn - Quốc lộ 50 - Hưng Long 
+	69  * 48  *  Bến xe Tân Phú - Chợ Hiệp Thành 
+	70  * 50  *  Đại học Bách khoa - Đại học Quốc gia 
+	71  * 51  *  Bến xe Miền Đông - Bình Hưng Hòa 
+	72  * 52  *  Bến Thành - Đại học Quốc tế 
+	73  * 53  *  Lê Hồng Phong - Đại học Quốc gia 
+	74  * 54  *  Bến xe Miền Đông - Bến xe Chợ Lớn 
+	75  * 55  *  Công viên phần mềm Quang Trung - Khu Công nghệ cao (Q9) 
+	76  * 56  *  Bến xe Chợ Lớn - Đại học Giao thông Vận tải 
+	77  * 57  *  Chợ Phước Bình - Trường THPT Hiệp Bình 
+	78  * 58  *  Bến xe Ngã 4 Ga - Bình Mỹ 
+	79  * 59  *  Bến xe Quận 8 - Bến xe Ngã 4 Ga 
+	80  * 60  *  Bến xe An Sương - KCN Lê Minh Xuân 
+	81  * 60-1  *  BX Miền Tây - BX Biên Hòa 
+	82  * 60-3  *  Bến xe Miền Đông - Khu Công nghiệp Nhơn Trạch 
+	83  * 60-4  *  Bến xe Miền Đông - Bến xe Hố Nai 
+	84  * 61  *  Bến xe Chợ Lớn - KCN Lê Minh Xuân 
+	85  * 61-1  *  Thủ Đức - Dĩ An 
+	86  * 61-3  *  Bến xe An Sương - Thủ Dầu Một 
+	87  * 61-4  *  Bến Dược - Dầu Tiếng 
+	88  * 61-6  *  Bến Thành - Khu Du lịch Đại Nam 
+	89  * 61-7  *  Bến đò Bình Mỹ - Bến xe Bình Dương 
+	90  * 61-8  *  Bến xe Miền Tây - Khu Du lịch Đại Nam 
+	91  * 62  *  Bến xe Quận 8 -Thới An 
+	92  * 62-10  *  Bến xe Chợ Lớn - Thanh Vĩnh Đông 
+	93  * 62-11  *  Bến xe Miền Tây - Tân Tập 
+	94  * 62-2  *  Bến xe Chợ Lớn - Ngã 3 Tân Lân 
+	95  * 62-3  *  Bến Củ Chi - Bến xe Hậu Nghĩa 
+	96  * 62-4  *  Thị trấn Tân Túc - Chợ Bến Lức 
+	97  * 62-5  *  Bến xe An Sương - Bến xe Hậu Nghĩa 
+	98  * 62-7  *  Bến xe Chợ Lớn - Bến xe Đức Huệ 
+	99  * 62-8  *  Bến xe Chợ Lớn - Bến xe Tân An 
+	100  * 62-9  *  Bến xe Quận 8 - Cầu Nổi 
+	101  * 64  *  Bến xe Miền Đông - Đầm Sen 
+	102  * 65  *  Bến Thành - CMT8 - Bến xe An Sương 
+	103  * 66  *  Bến xe Chợ Lớn - Bến xe An Sương 
+	104  * 68  *  Bến xe Chợ Lớn - KCX Tân Thuận 
+	105  * 69  *  Công viên 23/9 - KCN Tân Bình 
+	106  * 70  *  Tân Quy - Bến Súc 
+	107  * 70-1  *  Bến xe Củ Chi - Bến xe Gò Dầu 
+	108  * 70-2  *  BX Củ Chi - Hòa Thành 
+	109  * 70-3  *  Bến Thành - Mộc Bài 
+	110  * 70-5  *  Bố Heo - Lộc Hưng 
+	111  * 71  *  Bến xe An Sương - Phật Cô Đơn 
+	112  * 72  *  Công viên 23/9 - Hiệp Phước 
+	113  * 73  *  Chợ Bình Chánh - KCN Lê Minh Xuân 
+	114  * 74  *  Bến xe An Sương - Bến xe Củ Chi 
+	115  * 75  *  Sài Gòn - Cần Giờ 
+	116  * 76  *  Long Phước - Suối Tiên - Đền Vua Hùng 
+	117  * 77  *  Đồng Hòa - Cần Thạnh 
+	118  * 78  *  Thới An - Hóc Môn 
+	119  * 79  *  Bến xe Củ Chi - Đền Bến Dược 
+	120  * 80  *  Bến xe Chợ Lớn - Ba Làng 
+	121  * 81  *  Bến xe Chợ Lớn - Lê Minh Xuân 
+	122  * 82  *  Bến xe Chợ Lớn - Ngã 3 Tân Qúy Tây 
+	123  * 83  *  Bến xe Củ Chi - Cầu Thầy Cai 
+	124  * 84  *  Bến xe Chợ Lớn - Tân Túc 
+	125  * 85  *  Bến xe An Sương- Hậu Nghĩa 
+	126  * 86  *  Bến Thành - Đại học Tôn Đức Thắng 
+	127  * 87  *  Bến xe Củ Chi - An Nhơn Tây 
+	128  * 88  *  Bến Thành - Chợ Long Phước 
+	129  * 89  *  Đại học Nông Lâm - Trường THPT Hiệp Bình 
+	130  * 90  *  Phà Bình Khánh - Cần Thạnh 
+	131  * 91  *  Bến xe Miền Tây - Chợ nông sản Thủ Đức 
+	132  * 92  *  Bến xe Chợ Lớn - Chợ Bình Chánh 
+	133  * 93  *  Bến Thành - Đại học Nông Lâm 
+	134  * 94  *  Bến xe Chợ Lớn - Bến xe Củ Chi 
+	135  * 95  *  Bến xe Miền Đông - KCN Tân Bình 
+	136  * 96  *  Bến Thành - Chợ Bình Điền 
+	137  * 99  *  Chợ Thạnh Mỹ Lợi - Đại học Quốc gia 

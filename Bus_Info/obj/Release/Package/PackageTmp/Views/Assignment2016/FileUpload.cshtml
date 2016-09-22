@@ -1,0 +1,284 @@
+﻿@using Newtonsoft.Json
+@model List<List<Bus_Info.ViewModels.ViewModelConnection>>
+
+@{
+    ViewBag.Title = "Thông Tin Xe Buýt";
+    var baseUrl = new Uri(Request.Url, Url.Content("~")).AbsoluteUri;
+    var helpUrl = baseUrl + "Help/Index";
+    var routeUrl = baseUrl + "Route/Index";
+    var stationUrl = baseUrl + "Station/Index";
+}
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #map {
+        height: 100%;
+    }
+</style>
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+<style>
+    #locationField, #controls {
+        position: relative;
+        width: 480px;
+    }
+
+    #autocomplete, #autocomplete2 {
+        /*position: absolute;*/
+        top: 0px;
+        left: 0px;
+        width: 99%;
+    }
+
+    .label {
+        text-align: right;
+        font-weight: bold;
+        width: 100px;
+        color: #303030;
+    }
+
+    #address {
+        border: 1px solid #000090;
+        background-color: #f0f0ff;
+        width: 480px;
+        padding-right: 2px;
+    }
+
+        #address td {
+            font-size: 10pt;
+        }
+
+    .field {
+        width: 99%;
+    }
+
+    .slimField {
+        width: 80px;
+    }
+
+    .wideField {
+        width: 200px;
+    }
+
+    #locationField {
+        height: 20px;
+        margin-bottom: 2px;
+    }
+
+    .notify {
+        background: none;
+        overflow: auto;
+        top: 60px;
+        left: 850px;
+        display: block;
+        height: 60px;
+        width: 416px;
+    }
+
+    .notifymess {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .widget-social-aside {
+        position: fixed;
+        top: 40%;
+        right: 0;
+        z-index: 1000;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+        .widget-social-aside > ul > li > a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: url(../Content/Images/icon-widget-social.png) no-repeat 0 0;
+            position: relative;
+            z-index: 2;
+        }
+</style>
+
+<link href="~/Content/leaflet-routing-machine.css" rel="stylesheet" />
+<link href="~/Content/leaflet.extra-markers.min.css" rel="stylesheet" />
+<script>
+    var baseUrl = '@baseUrl';
+    var model = @Html.Raw(@JsonConvert.SerializeObject(Model))
+</script>
+<div class="wrapper" ng-app="app" ng-controller="HomeCtrl" block-ui="main">
+    <header class="main-header">
+        <a href="@baseUrl" class="logo">
+            <span class="logo-mini"></span>
+            <span class="logo-lg"><b>Thông tin xe buýt</b></span>
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Thong Tin Xe Buyt</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="@routeUrl">
+                            <i class="fa fa-random"></i>
+                            <span>Tuyến</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@stationUrl">
+                            <i class="fa fa-bus"></i>
+                            <span>Trạm</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@helpUrl">
+                            <i class="fa fa-paw"></i>
+                            <span>Trợ giúp</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+        <section class="sidebar" style="height: auto;">
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <!-- search -->
+                <li ng-class="tabAni1">
+                    <a href="#">
+                        <i class="fa fa-eye"></i> <span>Tìm đường đi</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="active" style="margin-right: 5px;">
+                            <div class="box box-info" style="margin-bottom:5px;">
+                                <div class="box-body">
+                                    <form id="searchform" novalidate="" class="ng-valid ng-valid-required ng-dirty ng-valid-parse" ng-init="fromname='';toname=''">
+                                        <div class="input-group ui-widget" style="margin-bottom: 10px;">
+                                            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                                            <input id="autocomplete" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" placeholder="Điểm đi" ng-model="from">
+                                        </div>
+                                        <div class="input-group ui-widget" style="margin-bottom: 10px;">
+                                            <span class="input-group-addon"><i class="fa fa-map-pin"></i></span>
+                                            <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" placeholder="lat ; lng" ng-model="fromLatLng">
+                                            <input id="fromlat" type="hidden" ng-model="fromlat" />
+                                            <input id="fromlng" type="hidden" ng-model="fromlng" />
+                                            <input id="fromname" type="hidden" ng-model="fromname" />
+                                        </div>
+                                        <div class="input-group ui-widget" style="margin-bottom: 10px;">
+                                            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                                            <input id="autocomplete2" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" name="walk" placeholder="Điểm đến" ng-model="to">
+                                        </div>
+                                        <div class="input-group ui-widget" style="margin-bottom: 10px;">
+                                            <span class="input-group-addon"><i class="fa fa-map-pin"></i></span>
+                                            <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" name="walk" placeholder="lat ; lng" ng-model="toLatLng">
+                                            <input id="tolat" type="hidden" ng-model="tolat" />
+                                            <input id="tolng" type="hidden" ng-model="tolng" />
+                                            <input id="toname" type="hidden" ng-model="toname" />
+                                        </div>
+                                        <button type="button" class="btn btn-success pull-right" ng-click="search()">Tìm đường</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!-- results -->
+                <li ng-class="tabAni2" ng-show="hasResult">
+                    <a href="#">
+                        <i class="fa fa-map-o"></i> <span>Kết quả tìm kiếm</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="active" style="margin-right: 5px;">
+                            <div class="box" style="border-top: 3px solid #00c0ef;">
+                                <div class="box-header">
+                                    <h3 class="box-title">Thông Tin Chính</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body no-padding">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>Tổng quảng đường</td>
+                                                <td><span class="badge bg-light-blue">{{TotalDistance/1000}} km</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Số lần chuyển tuyến</td>
+                                                <td><span class="badge bg-red">{{ChangeRoute}} lần</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- /.box-body -->
+                            </div>
+                            <div class="box" style="border-top: 3px solid #00c0ef; height:380px; overflow-y:scroll;">
+                                <div class="box-header">
+                                    <h3 class="box-title">Hướng Dẫn Chi Tiết</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body no-padding">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr ng-repeat="i in Detail">
+                                                <td ng-bind-html="i | sanitize"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- /.box-body -->
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <div class="content-wrapper block-ui-main">
+        <div id="map" style="height:100%;position:relative;" ng-right-click="showMenu($event)"></div>
+    </div>
+    <div class="box" ng-style="myStyle" ng-show="rightclick" ng-mouseleave="hideMenu()">
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+                <tbody>
+                    <tr style="cursor:pointer">
+                        <td ng-click="chooseFrom()"><i class="fa fa-map-marker"></i>    Đi từ đây</td>
+                    </tr>
+                    <tr style="cursor:pointer">
+                        <td ng-click="chooseTo()"><i class="fa fa-street-view"></i>   Đi tới đây</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div><!-- /.box-body -->
+    </div>
+    <div class="modal notify" ng-show="notifyFlag">
+        <div class="modal-dialog notifymess" style="width:400px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="hideNotify()"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" ng-bind="notifyMess"></h4>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <div class="widget-social-aside">
+        <ul>
+            <li class="icon-f">
+                <a target="_blank" href="https://www.facebook.com/thongtinxebuyt"></a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<script src="~/Scripts/Lib/leaflet-src.js"></script>
+<script src="~/Scripts/Lib/leaflet.extra-markers.min.js"></script>
+<script src="~/Scripts/Lib/leaflet-routing-machine.js"></script>
+<script src="~/Scripts/App/mapleaflet.js"></script>
+<script src="~/Scripts/Lib/polyline.js"></script>
+<script src="~/Scripts/Lib/angular-sanitize.min.js"></script>
+<script src="~/Scripts/Lib/angular-block-ui.js"></script>
+<script src="~/Scripts/App/assignment.js"></script>
